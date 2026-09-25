@@ -1,0 +1,47 @@
+{% extends 'turismo/base.html' %}
+{% load static %}
+{% block content %}
+
+    <!-- GALERIA -->
+    <section class="gallery" id="galeria">
+        <div class="container">
+            <div class="section-heading split-heading">
+                <div>
+                    <p class="eyebrow">Galeria</p>
+                    <h2>Dunas que encantam</h2>
+                </div>
+
+            </div>
+
+            <div class="gallery-grid">
+                <a href="#" class="gallery-item gallery-item-large">
+                <img src="{% static 'turismo/img/imgaerea.jpg.jpeg' %}" alt="Vista aérea dos Lençóis Maranhenses">
+                </a>
+
+                <a href="#" class="gallery-item">
+                <img src="{% static 'turismo/img/entredunas.jpg.jpeg' %}" alt="Lagoa entre as dunas">
+                </a>
+
+                <a href="#" class="gallery-item">
+                <img src="{% static 'turismo/img/pordosol.jpg.jpeg' %}" alt="Pôr do sol nos Lençóis Maranhenses">
+                </a>
+
+                <a href="#" class="gallery-item">
+                <img src="{% static 'turismo/img/turistas.jpg.jpeg' %}" alt="Turistas nas lagoas dos Lençóis">
+                </a>
+
+                <a href="#" class="gallery-item">
+                <img src="{% static 'turismo/img/dunasbranca.jpg.jpeg' %}" alt="Dunas de areia branca">
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+
+{% endblock %}
+
+
+{% block extra_js %}
+<script src="{% static 'turismo/js/animations.js' %}"></script>
+{% endblock %}

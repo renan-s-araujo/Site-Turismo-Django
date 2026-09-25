@@ -1,0 +1,136 @@
+{% extends "turismo/base.html" %}
+{% load static %}
+
+{% block title %}Atrações — Atlas Turismo{% endblock %}
+
+{% block content %}
+
+<main>
+
+    <!-- ATRAÇÕES -->
+    <section class="attractions" id="atracoes">
+        <div class="container">
+            <div class="section-heading split-heading">
+                <div>
+                    <p class="eyebrow">Atrações</p>
+                    <h2>As melhores atrações<br>para os melhores pontos turísticos.</h2>
+                </div>
+
+                <p class="section-description">
+                    Descubra as atrações mais incríveis dos Lençóis Maranhenses, desde
+                    passeios de quadriciclo pelas dunas até a tranquilidade das lagoas
+                    sazonais. Explore a natureza exuberante e viva experiências únicas
+                    em meio a paisagens deslumbrantes.
+                </p>
+            </div>
+
+            <div class="attraction-grid">
+                <article class="attraction-card-section-dark">
+                    <div class="card-image">
+                        <img
+                            src="{% static 'turismo/img/lagoazul.jpeg'%}"
+                            alt="Lago Azul"
+                        >
+                    </div>
+
+                    <div class="card-body-section-dark">
+                        <span class="card-category-section-dark">Natureza</span>
+                        <h3>Lagoa Bonita + Lagoa Azul</h3>
+                        <p>Conheça dois dos cenários mais famosos dos Lençóis Maranhenses.</p>
+
+                    </div>
+                </article>
+
+                <article class="attraction-card-section-dark">
+                    <div class="card-image">
+                        <img
+                            src="{% static 'turismo/img/dunas.jpg.jpeg'%}"
+                            alt="Quadriciclo nas dunas"
+                        >
+                    </div>
+
+                    <div class="card-body-section-dark">
+                        <span class="card-category-section-dark">Natureza</span>
+                        <h3>Quadriciclo nas Dunas</h3>
+                        <p>Aventura de quadriciclo por trilhas de dunas e lagoas sazonais.</p>
+
+                    </div>
+                </article>
+
+                <article class="attraction-card-section-dark">
+                    <div class="card-image">
+                        <img
+                            src="{% static 'turismo/img/lagoacardosa2.jpg'%}"
+                            alt="Circuito Cardosa"
+                        >
+                    </div>
+
+                    <div class="card-body-section-dark">
+                        <span class="card-category-section-dark">Natureza</span>
+                        <h3>Circuito Cardosa</h3>
+                        <p>Uma descida tranquila e refrescante pelo Rio Formiga, a bordo de boia, em meio à mata do Povoado de Cardosa.</p>
+
+                    </div>
+
+                </article>
+
+                            <article class="attraction-card-section-dark">
+                    <div class="card-image">
+                        <img
+                            src="{% static 'turismo/img/images.jpeg'%}"
+                            alt="Quadriciclo nas Dunas"
+                        >
+                    </div>
+
+                    <div class="card-body-section-dark">
+                        <span class="card-category-section-dark">Natureza</span>
+                        <h3>Nascer do Sol</h3>
+                        <p>Acompanhe o amanhecer nas dunas e observe os primeiros raios iluminando os Lençóis.</p>
+
+                    </div>
+                </article>
+
+                <article class="attraction-card-section-dark">
+                    <div class="card-image">
+                       <img
+                            src="{% static 'turismo/img/lagoasantoamaro.jpg'%}"
+                            alt="Circuito Rancharia"
+                        >
+                    </div>
+
+                    <div class="card-body-section-dark">
+                        <span class="card-category-section-dark">Natureza</span>
+                        <h3>Circuito Rancharia</h3>
+                        <p>Um dia inteiro em 4x4 pelas melhores lagoas de Santo Amaro.</p>
+
+                    </div>
+                </article>
+
+                <article class="attraction-card-section-dark">
+                    <div class="card-image">
+                        <img
+                            src="{% static 'turismo/img/mirardasestrelas.jpg'%}"
+                            alt="Mirar das Estrelas"
+                        >
+                    </div>
+
+                    <div class="card-body-section-dark">
+                        <span class="card-category-section-dark">Natureza</span>
+                        <h3>Mirar das Estrelas</h3>
+                        <p>Uma noite sob o céu estrelado das dunas, longe da luz das cidades.</p>
+
+                    </div>
+
+                </article>
+
+                
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
+
+
+{% block extra_js %}
+<script src="{% static 'turismo/js/animations.js' %}"></script>
+{% endblock %}

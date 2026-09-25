@@ -1,0 +1,289 @@
+{% extends "turismo/base.html" %}
+{% load static %}
+
+{% block title %}Atlas Turismo — Conectando Você ao Mundo{% endblock %}
+
+{% block meta_description %}
+Descubra Atlas Turismo: natureza, história, cultura e experiências inesquecíveis.
+{% endblock %}
+
+{% block content %}
+
+<main>
+    <!-- HERO -->
+    <section class="hero section-light-text" id="home">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content container">
+            <p class="eyebrow">Bem-vindo ao</p>
+            <h1>Atlas<br>Turismo</h1>
+
+            <p class="hero-description">
+                Natureza, história e cultura em um só lugar.
+                Venha viver essa experiência.
+            </p>
+
+            <a href="#atracoes" class="button button-gold">
+                Conheça nossas atrações
+                <span>→</span>
+            </a>
+        </div>
+
+        <div class="scroll-cue">
+            <span class="scroll-cue-line"></span>
+            <span>Desça para explorar</span>
+        </div>
+
+        <div class="hero-index"> <span></span></div>
+    </section>
+
+    <!-- ESPECIAL / ENTRADA LATERAL -->
+    <section class="special scroll-panel" id="especial">
+        <div class="special-pin">
+            <div class="special-background-decoration" aria-hidden="true"></div>
+
+            <div class="special-copy">
+                <p class="eyebrow">O que torna</p>
+                <h2>Atlas Turismo<br>Especial?</h2>
+
+                <p class="section-description">
+                    O Atlas Turismo nasceu da paixão por descobrir novos lugares e compartilhar as experiências que tornam cada viagem inesquecível. <br>
+                    Acreditamos que viajar vai muito além de conhecer paisagens bonitas. É também entrar em contato com diferentes culturas, histórias, sabores e pessoas que dão vida a cada destino.
+                </p>
+
+                <div class="feature-grid">
+                    <article class="feature">
+                        <span class="feature-icon">♧</span>
+                        <strong>Natureza</strong>
+                        <small>Paisagens preservadas</small>
+                    </article>
+
+                    <article class="feature">
+                        <span class="feature-icon">♜</span>
+                        <strong>História</strong>
+                        <small>Patrimônio vivo</small>
+                    </article>
+
+                    <article class="feature">
+                        <span class="feature-icon">♡</span>
+                        <strong>Cultura</strong>
+                        <small>Tradições locais</small>
+                    </article>
+
+                    <article class="feature">
+                        <span class="feature-icon">◇</span>
+                        <strong>Experiências</strong>
+                        <small>Momentos únicos</small>
+                    </article>
+                </div>
+            </div>
+
+            <div class="special-visual">
+                <div class="special-image"></div>
+                <span class="image-note">
+                    Aqui, cada paisagem<br>conta uma história.
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ATRAÇÕES -->
+    <section class="attractions section-dark" id="atracoes">
+        <div class="container">
+            <div class="section-heading split-heading">
+                <div>
+                    <p class="eyebrow">Nossos Passeios</p>
+                    <h2>Experiências desenhadas para todos<br>os perfis de viajantes.</h2>
+                </div>
+
+                <p class="section-description">
+                    Presencie as belezas naturais,
+                    cada atração tem algo especial para descobrir.
+                </p>
+            </div>
+
+            <div class="attraction-grid">
+                <article class="attraction-card">
+                    <div class="card-image">
+                        <img
+                            src="{% static 'turismo/img/lagoazul.jpeg'%}"
+                            alt="Lago Azul"
+                        >
+                    </div>
+
+                    <div class="card-body">
+                        <span class="card-category">Natureza</span>
+                        <h3>Lagoa Bonita + Lagoa Azul</h3>
+                        <p>Conheça dois dos cenários mais famosos dos Lençóis Maranhenses.</p>
+
+                    </div>
+                </article>
+
+                <article class="attraction-card">
+                    <div class="card-image">
+                        <img
+                            src="{% static 'turismo/img/dunas.jpg.jpeg'%}"
+                            alt="Quadriciclo nas dunas"
+                        >
+                    </div>
+
+                    <div class="card-body">
+                        <span class="card-category">Natureza</span>
+                        <h3>Quadriciclo nas Dunas</h3>
+                        <p>Aventura de quadriciclo por trilhas de dunas e lagoas sazonais.</p>
+
+                    </div>
+                </article>
+
+                <article class="attraction-card">
+                    <div class="card-image">
+                        <img
+                            src="{% static 'turismo/img/lagoacardosa2.jpg'%}"
+                            alt="Circuito Cardosa"
+                        >
+                    </div>
+
+                    <div class="card-body">
+                        <span class="card-category">Natureza</span>
+                        <h3>Circuito Cardosa</h3>
+                        <p>Uma descida tranquila e refrescante pelo Rio Formiga, a bordo de boia, em meio à mata do Povoado de Cardosa.</p>
+
+                    </div>
+                </article>
+            </div>
+
+            <a href="{% url 'atracoes' %}" class="button button-gold button-more">
+                Ver todas as atrações <span>→</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- HISTÓRIA -->
+    <section class="history" id="historia">
+        <div class="container history-grid">
+            <div class="history-copy reveal-left">
+                <p class="eyebrow">História e Cultura</p>
+                <h2>Um passado<br>que vive no presente</h2>
+
+                <p class="section-description">
+                    Conheça a história, cultura e gatronomia de um dos principais destinos turísticos do Brasil.
+                </p>
+
+                <a href="{% url 'historia' %}" class="button button-gold">
+                    Conheça a história & cultura <span>→</span>
+                </a>
+            </div>
+
+            <div class="history-visual reveal-right">
+                <div class="history-image"></div>
+                <span class="image-note">
+                    Tradição que se mantém viva.
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERIÊNCIAS -->
+    <section class="experiences section-light-text">
+        <div class="experiences-bg"></div>
+        <div class="experiences-overlay"></div>
+
+        <div class="container experiences-content reveal-up">
+            <p class="eyebrow">Experiências</p>
+            <h2>Viva momentos<br>inesquecíveis</h2>
+
+            <p class="section-description">
+                Explore trilhas, participe de festivais,
+                prove a gastronomia local e sinta a energia
+                de cada momento.
+            </p>
+
+            <a href="{% url 'atracoes' %}" class="button button-gold">
+                Descubra sua próxima viagem <span>→</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- GALERIA -->
+    <section class="gallery" id="galeria">
+        <div class="container">
+            <div class="section-heading split-heading">
+                <div>
+                    <p class="eyebrow">Galeria</p>
+                    <h2>Momentos que<br>inspiram</h2>
+                </div>
+
+                <a href="{% url 'galeria' %}" class="text-link">
+                    Ver galeria completa <span>→</span>
+                </a>
+            </div>
+
+            <div class="gallery-grid">
+                <a href="#" class="gallery-item gallery-item-large">
+                    <img
+                        src="{% static 'turismo/img/praiadeatins.jpg.jpeg' %}"
+                        alt="atins"
+                    >
+                </a>
+
+                <a href="#" class="gallery-item">
+                    <img
+                        src="{% static 'turismo/img/lagoamaranhense.webp' %}"
+                        alt="lagoa maranhense"
+                    >
+                </a>
+
+                <a href="#" class="gallery-item">
+                    <img
+                        src="{% static 'turismo/img/aguacristalina.jpg' %}"
+                        alt="agua cristalina"
+                    >
+                </a>
+
+                <a href="#" class="gallery-item">
+                    <img
+                        src="{% static 'turismo/img/lagoa2.webp' %}"
+                        alt="lagoa 2"
+                    >
+                </a>
+
+                <a href="#" class="gallery-item">
+                    <img
+                        src="{% static 'turismo/img/quadriciclo.jpg' %}"
+                        alt="quadriciclo"
+                    >
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta section-light-text">
+        <div class="cta-bg"></div>
+        <div class="cta-overlay"></div>
+
+        <div class="container cta-content reveal-up">
+            <p class="eyebrow">Pronto para explorar?</p>
+            <h2>Viva o Atlas Turismo<br>de perto</h2>
+
+            <p>
+                Planeje sua viagem e descubra tudo
+                o que esse destino tem a oferecer.
+            </p>
+
+            <a href="#" class="button button-gold">
+                Planeje sua viagem <span>→</span>
+            </a>
+        </div>
+    </section>
+</main>
+
+
+
+{% endblock %}
+
+
+{% block extra_js %}
+<script src="{% static 'turismo/js/animations.js' %}"></script>
+{% endblock %}
