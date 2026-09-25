@@ -21,6 +21,9 @@ jobs:
       - name: Iniciar o Servidor Simulado (Docker)
         run: docker run -d --name servidor-teste -p 8000:8000 site-turismo
 
+
+      - name: Verificar container
+        run: docker ps
       # 4. Prova de Conceito: Testa se o servidor simulado está rodando a aplicação
       - name: Testar se o sistema atualizou e está no ar
         run: |
