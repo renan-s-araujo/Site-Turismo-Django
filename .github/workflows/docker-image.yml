@@ -1,46 +1,28 @@
-name: Docker Image CI
+name: CI/CD POC (Servidor Simulado)
 
 on:
   push:
     branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-
-env:
-  REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository }}
 
 jobs:
-  build-and-push:
+  simulacao-deploy:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
 
     steps:
+      # 1. Pega o código atualizado do GitHub
       - name: Checkout do código
         uses: actions/checkout@v4
 
-      - name: Autenticar no GitHub Container Registry (GHCR)
-        uses: docker/login-action@v3
-        with:
-          registry: ${{ env.REGISTRY }}
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+      # 2. Constrói a imagem Docker da aplicação (Fase CI)
+      - name: Construir a imagem Docker
+        run: docker build -t site-turismo .
 
-      - name: Extrair metadados para as tags da imagem
-        id: meta
-        uses: docker/metadata-action@v5
-        with:
-          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
-          tags: |
-            type=raw,value=latest
-            type=sha,format=short
+      # 3. Simula o servidor iniciando o container com o código novo (Fase CD)
+      - name: Iniciar o Servidor Simulado (Docker)
+        run: docker run -d --name servidor-teste -p 8000:8000 site-turismo
 
-      - name: Construir e enviar a imagem Docker (Build & Push)
-        uses: docker/build-push-action@v5
-        with:
-          context: .
-          push: true
-          tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
+      # 4. Prova de Conceito: Testa se o servidor simulado está rodando a aplicação
+      - name: Testar se o sistema atualizou e está no ar
+        run: |
+          sleep 5
+          curl http://localhost:8000
