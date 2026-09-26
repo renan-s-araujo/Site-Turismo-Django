@@ -17,13 +17,24 @@ jobs:
       - name: Construir a imagem Docker
         run: docker build -t site-turismo .
 
-      # 3. Simula o servidor iniciando o container com o código novo (Fase CD)
-      - name: Iniciar o Servidor Simulado (Docker)
-        run: docker run -d --name servidor-teste -p 8000:8000 site-turismo
 
+      - name: Rodar testes
+        run: |
+          docker run --rm site-turismo python manage.py test
+
+
+      # 3. Simula o servidor iniciando o container com o código novo (Fase CD)
+      - name: Iniciar o servidor simulado
+        run: |
+          docker run -d \
+            --name servidor-teste \
+            -p 8000:8000 \
+            site-turismo
 
       - name: Verificar container
-        run: docker ps
+        run: |
+          docker ps
+          docker inspect -f '{{.State.Running}}' servidor-teste
       # 4. Prova de Conceito: Testa se o servidor simulado está rodando a aplicação
       - name: Testar se o sistema atualizou e está no ar
         run: |
